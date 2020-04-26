@@ -1,3 +1,10 @@
+This assignment really helped me practice setting routes, all the learning mySQL this week has certainly shown me the value of databases.  I still need a lot of practice but I am enjoying learning,
+
+For whatever reason my save button wouldn't properly render new notes so I added location.reload() to the save function.
+
+
+
+
 # Unit 11 Express Homework: Note Taker
 
 ## Description
