@@ -4,6 +4,16 @@ html, body {
   padding: 0;
 }
 
+body {
+  background-image: url("https://s3.amazonaws.com/gardentower-live/wp-content/uploads/2017/03/19102357/CoverPhoto-Garden-Journal-HR.jpg");
+  background-size: cover;
+}
+
+h1 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  
+}
+
 .save-note {
   display: none;
 }
@@ -67,4 +77,13 @@ html, body {
   border-right: none;
   padding: 20px;
   cursor: pointer;
+}
+
+#fieldNotes {
+  background-color: rgba(255,255,255, .8);
+
+}
+
+.notes {
+  background-color: rgba(255,255,255, .9);
 }
