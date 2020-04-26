@@ -1,12 +1,12 @@
 var fs = require("fs");
-let notes
-let parsedNotes = [];
+
 let id = 0
 module.exports = function (app) {
 
 
   app.get("/api/notes", function (req, res) {
-    notes = fs.readFileSync("./db/db.json", "utf-8");
+    let notes = fs.readFileSync("./db/db.json", "utf-8");
+    let parsedNotes = [];
     if (!notes) {
       parsedNotes = [];
     }
@@ -19,6 +19,8 @@ module.exports = function (app) {
 
 
   app.post("/api/notes", (req, res) => {
+    let notes = fs.readFileSync("./db/db.json", "utf-8");
+    let parsedNotes = JSON.parse(notes);
     console.log(parsedNotes);
     req.body.id = id;
     parsedNotes.push(req.body);
@@ -31,9 +33,11 @@ module.exports = function (app) {
   })
 
   app.delete("/api/notes/:id", function (req, res) {
+    let notes = fs.readFileSync("./db/db.json", "utf-8");
+    let parsedNotes = JSON.parse(notes);
     console.log("removing note:" + req.params.id)
     parsedNotes = parsedNotes.filter(element => {
-      element.id !== req.params.id;
+      return element.id != req.params.id;
     });
     console.log(parsedNotes);
     fs.writeFile("./db/db.json", JSON.stringify(parsedNotes), "utf8", (err) => {
